@@ -20,9 +20,9 @@ describe("Color Code Converter", function() {
             var verdeEnRGBResultante = converter.hexARGB("00ff00");
             var azulenRGBResultante = converter.hexARGB("0000ff");
 
-            expect(rojoEnRGBResultante).to.equal([255, 0, 0]);
-            expect(verdeEnRGBResultante).to.equal([0, 255, 0]);
-            expect(azulenRGBResultante.to.equal([0, 0, 255]));
+            expect(rojoEnRGBResultante).to.deep.equal([255, 0, 0]);
+            expect(verdeEnRGBResultante).to.deep.equal([0, 255, 0]);
+            expect(azulenRGBResultante.to.deep.equal([0, 0, 255]));
         });
     });
 
