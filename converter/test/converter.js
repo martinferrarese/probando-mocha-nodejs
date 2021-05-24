@@ -16,13 +16,13 @@ describe("Color Code Converter", function() {
 
     describe("Conversiónde Hex a RGB", function() {
         it("convierte los colores básicos", function() {
-            var rojoEnRGBResultante = converter.hexARgb("ff0000");
+            var rojoEnRGBResultante = converter.hexARGB("ff0000");
             var verdeEnRGBResultante = converter.hexARGB("00ff00");
-            var azulenRGBResultante = converter.hexARGB("0000ff");
+            var azulEnRGBResultante = converter.hexARGB("0000ff");
 
             expect(rojoEnRGBResultante).to.deep.equal([255, 0, 0]);
             expect(verdeEnRGBResultante).to.deep.equal([0, 255, 0]);
-            expect(azulenRGBResultante.to.deep.equal([0, 0, 255]));
+            expect(azulEnRGBResultante).to.deep.equal([0, 0, 255]);
         });
     });
 

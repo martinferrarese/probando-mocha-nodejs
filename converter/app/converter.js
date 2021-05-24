@@ -9,3 +9,8 @@ exports.rgbAHex = function(rojo, verde, azul) {
 function pad(valorEnHex) {
     return (valorEnHex.length === 1 ? "0" + valorEnHex : valorEnHex);
 };
+
+exports.hexARGB = function(valorEnHex) {
+    var rojo = parseInt(valorEnHex.substring(0,2), 16);
+    return [rojo, parseInt(valorEnHex.substring(2, 4), 16), parseInt(valorEnHex.substring(4, 6), 16)];
+};
