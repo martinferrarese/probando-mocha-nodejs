@@ -1,0 +1,33 @@
+version: v1.0
+name: Install
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu1804
+blocks:
+  - name: Install
+    task:
+      jobs:
+        - name: Install
+          commands:
+            - checkout
+            - sem-version node 14
+            - cache restore
+            - npm install
+            - cache store
+  - name: Test
+    task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 14
+          - cache restore
+      jobs:
+        - name: Test
+          commands:
+            - cd converter
+            - node app/server.js &
+            - npm test
