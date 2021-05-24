@@ -1,19 +1,32 @@
 version: v1.0
-name: Test MyApp
+name: Install
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Test
+  - name: Install
     task:
       jobs:
-        - name: Test
+        - name: Install
           commands:
             - checkout
-            - sem-version node 12
+            - sem-version node 14
             - cache restore
             - npm install
             - cache store
+  - name: Test
+    task:
+      env_vars:
+        - name: NODE_ENV
+          value: test
+      prologue:
+        commands:
+          - checkout
+          - sem-version node 12
+          - cache restore
+      jobs:
+        - name: Test
+          commands:
             - node app/server.js &
             - npm test
