@@ -10,7 +10,6 @@ blocks:
       jobs:
         - name: Install
           commands:
-            - cd converter
             - checkout
             - sem-version node 14
             - cache restore
