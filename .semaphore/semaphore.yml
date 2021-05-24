@@ -28,5 +28,5 @@ blocks:
       jobs:
         - name: Test
           commands:
-            - node converter/app/server.js
+            - node converter/app/server.js &
             - npm test
