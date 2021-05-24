@@ -10,6 +10,7 @@ blocks:
       jobs:
         - name: Install
           commands:
+            - cd converter
             - checkout
             - sem-version node 14
             - cache restore
@@ -28,5 +29,6 @@ blocks:
       jobs:
         - name: Test
           commands:
-            - node converter/app/server.js &
+            - cd converter
+            - node app/server.js &
             - npm test
