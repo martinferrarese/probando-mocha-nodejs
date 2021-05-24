@@ -23,10 +23,10 @@ blocks:
       prologue:
         commands:
           - checkout
-          - sem-version node 12
+          - sem-version node 14
           - cache restore
       jobs:
         - name: Test
           commands:
-            - node app/server.js &
+            - node app/server.js
             - npm test
